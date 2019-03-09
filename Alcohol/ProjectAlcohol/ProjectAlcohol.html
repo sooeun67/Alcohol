@@ -1,0 +1,482 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="../css/ImageGallery.css" rel="stylesheet" />
+    <script src="../js/ProjectAlcohol_kiroong.js"></script>
+
+    <link rel="icon" href="Images/RM-Logo.ico" />
+    <title>Visual Exploration</title>
+
+
+    <style>
+        .navbar-default .navbar-nav .active a {
+            color: black !important;
+        }
+
+
+            .navbar-default .navbar-nav .active a::after {
+                border-bottom: 5px solid #ff6a00;
+                bottom: -10px;
+                content: " ";
+                left: 0;
+                position: absolute;
+                right: 0;
+            }
+
+
+        iframe {
+            min-width: 100%;
+        }
+    </style>
+
+
+</head>
+
+<body style="font-family:'Tahoma', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+
+    <nav class="navbar navbar-default" style="background: url('../Images/banner2.png'); background-size: 100% 150px; height: 150px; position:relative;">
+        <div class="container-fluid" style="position:absolute; bottom:0; right: 0">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../Home.html" id="clk_home" style="color:white">Home</a></li>
+                    <li class="active"><a href="#" id="clk_intro" onclick="showSection(id)" style="color:white">Introduction</a></li>
+                    <li><a href="#" id="clk_mental" onclick="showSection(id)" style="color:white">Alcohol and Mental Healthiness</a></li>
+                    <li><a href="#" id="clk_physical" onclick="showSection(id)" style="color:white">Alcohol and Physical Health</a></li>
+                    <li><a href="#" id="clk_other" onclick="showSection(id)" style="color:white">Other Factors</a></li>
+                    <li><a href="#" id="clk_conclusion" onclick="showSection(id)" style="color:white">Conclusion</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div id="section_container" class="row" style="padding-left:100px; padding-right: 100px; padding-top:30px; text-align:justify"> 
+    <!--<div class="row" style="padding-left:100px; padding-right: 100px; padding-top:30px; text-align:justify">-->
+            
+        <div id="intro">
+            The <b>dataset</b> contains 11 columns: country, region, hemisphere, mental healthiness, rank of mental healthiness, human development index, beer consumption, wine consumption, spirits consumption, and life expectancy.
+            I also created new features by bins, factors, and percentages for convenience. 
+            Among these factors, the project aims to find a <b>correlation</b> among <font color="#d62728">alcohol consumption</font> and <font color="#0000e5">health(mental and physical)</font>.
+            <br /><br />
+            First of all, I wanted to learn which country drinks most and least. When we think of <b><font color="#78ccee">vodka</font></b>(one of spirits), the first thing comes is vodka-drinking Russians. <br>
+            What about <b><font color="#e19813">beer</font></b>? Germany has a famour beer festival, Oktoberfest, every fall. Would Germany be the country that drinks beer most? <br>
+            France, Italy, and Argentia are one of the best <b><font color="#980d98">wine</font></b> producers in the world. Would they also drink as much as they product? What do you think? <br> <br>
+            You can check these out from the following wordclouds.
+            <br /><br />
+            
+            <!-- <figure style="border: 1px solid #000; height:auto">
+                <embed id="myIframe" src="../Plots/beer_wordcloud.png"
+                       style="width:100%; height:650px" /> -->
+                       
+            <figure style="border: 1px solid #000; height:auto">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <center>
+                            <h5><b><font color="#e19813">Beer</font></b></h5>
+                        </center>
+                        <img src="../Plots/beer_wordcloud.png" />
+                    </div>
+                    <div class="col-md-6">
+                        <center>
+                            <h5><b><font color="#980d98">Wine</font></b></h5>
+                        </center>
+                        <img src="../Plots/wine_wordcloud.png" />
+                    </div>
+                    <div class="col-md-6">
+                        <center>
+                            <h5><b><font color="#78ccee">Spirits</font></b></h5>
+                        </center>
+                        <img src="../Plots/spirits_wordcloud.png" />
+                    </div>
+                </div>            
+            <br /><br />
+            
+            <!-- <figure style="border: 1px solid #000; height:auto">
+                <embed id="myIframe" src=" https://sooeunoh.shinyapps.io/Shinyapps/"
+                       style="width:100%; height:650px" /> -->
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 1,2,3: Wordclouds of Countries by beer, wine, spirits consumption. <br>
+                        Created with: R <br/>
+                    </i>
+                </figcaption>
+            </figure>
+            
+            <br /><br />
+            I learned that Eastern European countries such as Germany, Czech Republic, and Belgium have the highest <b><font color="#e19813">beer</font></b> consumption 
+            while Russia and Belarus are the highest <b><font color="#78ccee">spirits</font></b>-drinking regions. 
+            Not only France but also Portugal and Switzerland have the highest <b><font color="#980d98">wine</font></b> consumption. 
+            Now, I wanted to see all three combined in one plot. The following figure is a dot plot of three different alcohol consumption. <br>
+            <br /><br />
+            
+            <figure style="border: 1px solid #000; height:auto">
+                <div>
+                    <a href="https://plot.ly/~sooeun67/43/?share_key=sNW2WgnTltLO0PP8emnxEl" target="_blank" title="plot from API (5)" style="display: block; text-align: center;"><img src="https://plot.ly/~sooeun67/43.png?share_key=sNW2WgnTltLO0PP8emnxEl" alt="plot from API (5)" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                    <script data-plotly="sooeun67:43" sharekey-plotly="sNW2WgnTltLO0PP8emnxEl" src="https://plot.ly/embed.js" async></script>
+                </div>
+        
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 4: Dot Plot of beer, wine, spirits consumption by country. <br>
+                        Also available <a href="https://plot.ly/~sooeun67/43/?share_key=sNW2WgnTltLO0PP8emnxEl" target="_blank">here</a>.<br />
+                        Created with: R, Plotly<br />
+                    </i>
+                </figcaption>            
+            
+            </figure>
+            
+            <br /><br /> <br />
+            By using shiny app, I was able to look at the distribution of <b><font color="#e19813">beer</font></b> consumption by adjusting the number of bins too. <br>
+            <br />
+            <figure style="border: 1px solid #000; height:auto">
+                <div>
+                <embed id="myIframe" src=" https://sooeunoh.shinyapps.io/Shinyapps/"
+                       style="width:100%; height:650px" />
+                </div>       
+                     
+        
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 5: Shiny App of Beer Consumption  <br>
+                        Also available <a href="https://sooeunoh.shinyapps.io/Shinyapps/" target="_blank">here</a>.<br />
+                        Created with: R, Shiny<br />
+                    </i>
+                </figcaption>            
+            
+            </figure>
+            
+            
+            
+            
+            
+            <br /><br />
+            
+            Now, let's check out the distribution of some columns of our data. 
+            Among many different columns, I wanted to take a look at <b><font color="#e19813">beer</font></b> and <b>Human Development Index(HDI)</b>. <br>
+            The Human Deveopment Index(HDI) was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, 
+            not economic growth alone. 
+            The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. 
+            These contrasts can stimulate debate about government policy priorities. 
+            Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+            Thus, HDI can be considered as a measure of well-being life.
+            <br /><br /> <br />
+            
+            <figure style="border: 1px solid #000; height:auto">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <center>
+                            <h5><b><font color="#e19813">Beer</font></b></h5>
+                        </center>
+                        <img src="../Plots/Histogram_Beer.jpg" />
+                    </div>
+                    <div class="col-md-6">
+                        <center>
+                            <h5><b>Human Development Index</b></h5>
+                        </center>
+                        <img src="../Plots/Histogram_HDI.jpg" />
+                    </div>
+                </div> 
+        
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 6,7 : Histogram of Beer Consumption and HDI
+                        Created with: R, ggplot2 <br />
+                    </i>
+                </figcaption>            
+            
+            </figure>
+            
+            <br /><br /> 
+            The following is a <b>leaflet map</b> created with R that shows the countries whose alcohol consumption 
+            including <b><font color="#e19813">beer</font></b>, <b><font color="#980d98">wine</font></b>, and <b><font color="#78ccee">spirits</font></b> are high 
+            as colored in <font color="#a5aae7">light blue</font> on the map. <br>
+            Also, from the map, you will be able to see some popups with the note of the corresponding information of the countries. 
+            <br /><br />
+            
+            <figure style="border: 1px solid #000">
+                <div>
+                    <iframe src="../Plots/leaflet_map.html"
+                            style="width:90%" height="500"></iframe>
+                </div>
+
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 8: Leaflet map that shows high alcohol consumption with some notes <br>
+                        Also available <a href="../Plots/leaflet_map.html" target="_blank">here</a>.<br />
+                        Created with: R, Leaflet<br />
+                    </i>
+                </figcaption>
+            </figure>
+            
+            
+            
+        </div>
+
+
+
+
+
+
+        <div id="mental" style="display:none">
+    
+            Everyone knows drinking too much can be bad for you — but that public health discussion doesn’t usually take into account how much fun it is to throw back a bottle of beer.
+            While alcohol can cause big problems for our physical and mental health when consumed for a long time of period, it has a positive impact on our mood such as <b>happy hour, birthday, and family gathering</b>.
+            
+            Personally, our family has allowed me to taste a sip of wine since I was 10; they consider wine as a pairing beverage rather than "alcohol". 
+            Thus, the way I think of <b>drinking</b> is something like "happy gathering", "friends", and "parties" rathern than "binge drinking" or "party monster". 
+            
+            <br /><br />
+            This page will explore additional columns of the dataset including<b> mental healthiness</b> and <b>life expectancy</b>.
+            <br /><br />
+            First of all, I wanted to take a look at the relationship between mental healthiness and life expectancy. 
+            At the same time, I colored the each data point by five different level of <b><font color="#e19813">beer</font></b> consumption. 
+            <br /><br />
+            
+            <figure style="border: 1px solid #000 ">
+                <div>
+                    <a href="https://plot.ly/~sooeun67/26/?share_key=v8QTpPxR0WAFbqo3KbaaVN" target="_blank" title="p_scatter" style="display: block; text-align: center;"><img src="https://plot.ly/~sooeun67/26.png?share_key=v8QTpPxR0WAFbqo3KbaaVN" alt="p_scatter" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                    <script data-plotly="sooeun67:26" sharekey-plotly="v8QTpPxR0WAFbqo3KbaaVN" src="https://plot.ly/embed.js" async></script>
+                </div>
+
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 9: Scatter Plot of Life Expectancy and Mental Healthiness binned by Beer Consumption level <br>
+                        Also available <a href="../Plots/p_scatter.html" target="_blank">here</a>.<br />
+                        Created with: R, Plotly<br />
+                    </i>
+                </figcaption>
+            </figure>
+            
+            <br /> <br />
+            From the following facet plot, you can learn more details about <b>mental healthiness, human development</b>, and <b><font color="#e19813">beer</font></b> consumption. <br>
+            One of the advantages of facet plot is to give you more more deatailed picture of the graphs as it is divided by five different parts <br /> <br />
+            
+            <figure style="border: 1px solid #000">
+                <div>
+                    <iframe src="../Plots/Facet_Happiness_HDI_Beer.jpg"
+                            style="width:90%" height="500"></iframe>
+                </div>
+
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 10: Facet Plot of Mental Healthiness and Human Development Index binned by Beer Consumption level <br>
+                        Created with: R, ggplot2<br />
+                    </i>
+                </figcaption>
+            </figure>
+            
+            <br /> <br />
+            Lastly, I also created a scatter plot of <b>life expectancy, mental healthiness</b> and <b><font color="#980d98">wine</font></b> consumption. 
+            It is interesting to note that all of the indicators do not seem to have a strong correlation with each other.
+            <br /><br>
+            
+            <figure style="border: 1px solid #000">
+                <div>
+                    <a href="https://plot.ly/~sooeun67/28/?share_key=Qd7g8hEq5HYoHe2qnssrlv" target="_blank" title="scatter_gdp_life_wine" style="display: block; text-align: center;"><img src="https://plot.ly/~sooeun67/28.png?share_key=Qd7g8hEq5HYoHe2qnssrlv" alt="scatter_gdp_life_wine" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                    <script data-plotly="sooeun67:28" sharekey-plotly="Qd7g8hEq5HYoHe2qnssrlv" src="https://plot.ly/embed.js" async></script>
+                </div>
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 11: Scatter Plot of Life Expectancy, Mental Healthiness, Wine Consumption <br>
+                        Also available <a href="../Plots/scatter_gdp_life_wine.html" target="_blank">here</a>.<br />
+                        Created with: R, Plotly<br />
+                    </i>
+                </figcaption>
+            </figure>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+
+
+        <div id="physical" style="display:none">
+            As discussed earlier, it is well-known that heavy drinking can cause problems with the digestive system, such as stomach ulcers, acid reflux, heartburn, and inflammation of the stomach lining, known as gastritis
+            Despite many researches out there, I would like to see the relationship between alcohol consumption and physical health by looking at the life expectancy. Would alcohol consumption reduce our life expectancy? Would the impact be critical? 
+            <br /><br />
+            
+            We are going to explore a rotatable 3D plot of <b><font color="#e19813">beer</font></b>, <b><font color="#980d98">wine</font></b>, and <b><font color="#78ccee">spirits</font></b> colored by 5 different level of life expectancy. 
+            You can definitely rotate the following plot to anyway you'd like to see in detail.
+            <br /><br />
+            <figure style="border: 1px solid #000">
+                <div>
+                    <iframe src="../Plots/3D_rotatable_alcohol_plotly.html"
+                            style="width:90%" height="500"></iframe>
+                </div>
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 12: 3D Rotatable Plot of Beer, Wine, Spirits colored by life expectancy level <br>
+                        Also available <a href="../Plots/3D_rotatable_alcohol_plotly.html" target="_blank">here</a>.<br />
+                        Created with: R, Plotly<br />
+                    </i>
+                </figcaption>                
+            
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.16/iframeResizer.min.js"></script>
+            <style>
+                iframe {
+                    min-width: 100%;
+                }
+            </style>
+
+            </figure>
+            <script>
+                iFrameResize({
+                    heightCalculationMethod: 'taggedElement'
+                });
+            </script>
+            
+            It was interesting to note that many countries who have high alcohol consumption tend to have higher life expectancy 
+            as the countries are colored in <b><font color="#ffb6c1">pink</font></b> and <b><font color="#d3d3d3">light grey</b></font>.
+            
+            <br /><br /><br />
+            Let's see how beer consumption is distributed by five different level of life expectancy by looking at the following boxplots.
+            Regardless of the beer consumption, it seems that life expectancy tends to have more frequency in 4th and 5th group of bins.
+            
+            <br /><br />
+            <figure style="border: 1px solid #000">
+                <div>
+                    <iframe src="../Plots/Boxplot_LifeExp_and_Beer(1).jpg"
+                            style="width:90%" height="500"></iframe>
+                </div>
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 13: Boxplot of Life Expectancy and Beer <br>
+                        Created with: R, ggplot2<br />
+                    </i>
+                </figcaption>                
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.16/iframeResizer.min.js"></script>
+            <style>
+                iframe {
+                    min-width: 100%;
+                }
+            </style>
+
+            </figure>
+            <script>
+                iFrameResize({
+                    heightCalculationMethod: 'taggedElement'
+                });
+            </script>
+            
+            <br /><br />
+            What about the relationship with other factor? We learned that Human Development Index(HDI) is a good measurement of <b>"well-being life"</b>.
+            Would it be interesting to see the correlation between life expectancy and HDI? Let's see the following boxplot.
+            <br /><br />
+            <figure style="border: 1px solid #000">
+                <div>
+                    <iframe src="../Plots/Boxplot_LifeExp_and_HDI(2).jpg"
+                            style="width:90%" height="500"></iframe>
+                </div>
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 14: Boxplot of Life Expectancy and Human Development Index <br>
+                        Created with: R, ggplot2<br />
+                    </i>
+                </figcaption>                
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.16/iframeResizer.min.js"></script>
+            <style>
+                iframe {
+                    min-width: 100%;
+                }
+            </style>
+
+            </figure>
+            <script>
+                iFrameResize({
+                    heightCalculationMethod: 'taggedElement'
+                });
+            </script>
+        </div>
+
+
+        <div id="other" style="display:none">
+            I also built Tableau story that contains not only <b>geographical view</b> but also many different plots with <b>different perspectives</b> including line graph, dot graph, boxplot, and area graph.
+            
+            <br /><br />
+            <figure style="border: 1px solid #000">
+                <div class='tableauPlaceholder' id='viz1544598752210' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;BR&#47;BRSHTPH3J&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;BRSHTPH3J' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;BR&#47;BRSHTPH3J&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1544598752210');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 15: Tableau story <br>
+                        Also available <a href="https://public.tableau.com/shared/4JNJZKDMM?:display_count=yes" target="_blank">here</a>.<br />
+                        Created with: Tableau<br />
+                    </i>
+                </figcaption>
+            </figure>
+            
+            
+            
+            
+            <br /><br />
+            The following is a network D3 of countries.
+            <br /><br />
+            <figure style="border: 1px solid #000">
+                <iframe src="../Plots/D3_Sooeun.html"
+                        style="width:90%" height="500"></iframe>                
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 16: Network D3 <br>
+                        Also available <a href="../Plots/D3_Sooeun.html" target="_blank">here</a>.<br />
+                        Created with: R<br />
+                    </i>
+                </figcaption>
+            </figure>
+            
+            
+            
+
+        </div>
+
+
+        <div id="conclusion" style="display:none">
+            From this project, I was able to learn a relationship between alcohol consumption and health(mental and physical). 
+            Though it is not clear that which indicator determines mental or physical health most or least, it is important to explore all different factors.
+            Before I started out the project, I assumed that alcohol may reduce life expectancy as drinking is known to cause many serious diseases, but in fact, 
+            the alcohol consumption seems not to directly affect our life expectancy. Plus, I learned that there would be other factors to determine physical and mental healthiness, 
+            so I'd like to dive more into this area to figure out other indicators of health other than life expectancy and mental healthiness score.
+            <br /><br /> <br />
+
+            
+            <b>Want to see my code? </b> <br>
+            <a href="../Codes/codes.zip" target="_blank"> Click and download code here.</a>
+
+        </div>
+
+    </div>
+
+    <div class="row" style="height:80px; width:100%"></div>
+
+    <footer class="footer">
+        <div class="container" style="text-align:center; width:100%">
+            <span class="text-muted" style="color:white">
+                Georgetown University&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                ANLY 503 - Analytical Data Visualization&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                Sooeun Oh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                
+            </span>
+        </div>
+    </footer>
+
+</body>
+</html>

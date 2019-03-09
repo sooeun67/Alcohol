@@ -1,0 +1,132 @@
+﻿.product-slider {
+    padding: 20px;
+}
+
+    .product-slider #carousel {
+        border: 1px solid #0cab44;
+        margin: 0;
+    }
+
+    .product-slider #thumbcarousel {
+        margin: 12px 0 0;
+        padding: 0 45px;
+    }
+
+        .product-slider #thumbcarousel .item {
+            text-align: center;
+        }
+
+            .product-slider #thumbcarousel .item .thumb {
+                border: 3px solid #cecece;
+                width: 20%;
+                margin: 0 2%;
+                display: inline-block;
+                vertical-align: middle;
+                cursor: pointer;
+                max-width: 98px;
+            }
+
+                .product-slider #thumbcarousel .item .thumb:hover {
+                    border-color: #1089c0;
+                }
+
+            .product-slider #thumbcarousel .item .thumb img {
+                max-height: 72px;
+            }
+
+    .product-slider .item img {
+        width: 100%;
+        height: auto;
+    }
+
+
+#carousel .carousel-inner .item .adjust center img {
+    /*height: 50%;*/
+    /*width: 50%;*/
+    height: 520px;
+    width: 700px;
+}
+
+/*#carousel .carousel-inner .item:active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+
+.carousel-control {
+    color: #0284b8;
+    text-align: center;
+    text-shadow: none;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    line-height: 20px;
+    top: 23%;
+}
+
+    .carousel-control:hover, .carousel-control:focus, .carousel-control:active {
+        color: #333;
+    }
+
+    .carousel-caption, .carousel-control .fa {
+        font: normal normal normal 30px/26px FontAwesome;
+    }
+
+.carousel-control {
+    background-color: rgba(0, 0, 0, 0);
+    bottom: auto;
+    font-size: 20px;
+    left: 0;
+    position: absolute;
+    top: 30%;
+    width: auto;
+}
+
+    .carousel-control.right, .carousel-control.left {
+        background-color: rgba(0, 0, 0, 0);
+        background-image: none;
+    }
+
+
+.underline {
+    border-bottom: 2px solid #0cab44;
+    width: 100%;
+    display: block;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px; /* Set the fixed height of the footer here */
+    line-height: 30px; /* Vertically center the text there */
+    font-size: smaller;
+    background-color: darkcyan;
+    font-family: Tahoma;
+}
+
+.navbar-right > li {
+    float: left;
+    position: relative;
+}
+
+.navbar-default .navbar-nav .active a {
+    color: black !important;
+}
+
+
+.navbar-default .navbar-nav .active a::after {
+    border-bottom: 5px solid #ff6a00;
+    bottom: -10px;
+    content: " ";
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+
+
+iframe {
+    min-width: 100%;
+}
